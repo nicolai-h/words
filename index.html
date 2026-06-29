@@ -17,6 +17,7 @@
         <option value="ALL">N5 + N4</option>
       </select>
       <button id="shuffle-btn" type="button" aria-label="Shuffle deck">⇄</button>
+      <button id="settings-btn" type="button" aria-label="Settings">⚙</button>
     </div>
   </header>
 
@@ -31,6 +32,7 @@
         </div>
         <div class="card-face card-back">
           <div class="english" id="english"></div>
+          <button id="know-btn" type="button" class="know-btn">✓ I know this</button>
           <div class="hint">tap to flip</div>
         </div>
       </div>
@@ -41,6 +43,29 @@
       <button id="next-btn" type="button">Next →</button>
     </div>
   </main>
+
+  <div class="modal-backdrop" id="settings-modal" hidden>
+    <div class="modal" role="dialog" aria-label="Settings">
+      <div class="modal-header">
+        <h2>Settings</h2>
+        <button id="close-settings-btn" type="button" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <label class="setting-row">
+          <span>Show furigana</span>
+          <input type="checkbox" id="toggle-furigana" />
+        </label>
+        <label class="setting-row">
+          <span>Hide words I know</span>
+          <input type="checkbox" id="toggle-hide-known" />
+        </label>
+        <div class="setting-row">
+          <span>Known words: <strong id="known-count">0</strong></span>
+          <button id="reset-known-btn" type="button" class="danger-btn">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="vocab.js"></script>
   <script src="app.js"></script>

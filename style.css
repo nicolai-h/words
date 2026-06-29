@@ -66,9 +66,103 @@ button:active {
   transform: scale(0.97);
 }
 
-#shuffle-btn {
+#shuffle-btn, #settings-btn {
   font-size: 1.1rem;
   min-width: 2.6rem;
+}
+
+.card.no-anim .card-inner {
+  transition: none;
+}
+
+body.no-furigana .word ruby rt {
+  visibility: hidden;
+}
+
+.know-btn {
+  position: absolute;
+  bottom: 2.75rem;
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--card-back-fg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 999px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 1rem;
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.modal {
+  background: var(--bg-2);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal-header h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+#close-settings-btn {
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0.25rem 0.6rem;
+}
+
+.modal-body {
+  padding: 0.5rem 1.25rem 1.25rem;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+.setting-row input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.danger-btn {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  font-size: 0.85rem;
+  padding: 0.35rem 0.85rem;
 }
 
 main {
